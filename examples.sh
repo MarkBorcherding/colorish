@@ -1,6 +1,7 @@
 source colors.sh
 
 for style in NORMAL BOLD DIM UNDERLINE BLINK INVERTED HIDDEN; do
+  printf "%-10s" "$style"
   for color in BLACK RED GREEN YELLOW BLUE PURPLE CYAN WHITE; do
      echo -en "${!color}${!style}$color${RESET_COLOR}\t"
    done
