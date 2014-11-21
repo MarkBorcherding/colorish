@@ -10,6 +10,3 @@ Source `colors.sh` or drop in the color codes you need.
 
 Run `source examples.sh`
 
-## Todo
-
-Look at using `tput` and falling back to raw codes.
