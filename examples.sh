@@ -27,7 +27,9 @@ done
 for i in {0..15}; do
   for j in {0..15}; do
     let c=$(($i*16 + $j))
-    echo -en "\033[38;5;${c}m${c}\033[0m\t"
+    echo -en "\033[38;5;${c}m"
+    printf "%-4s" $c
+    echo -en "\033[0m"
   done
   echo
 done
