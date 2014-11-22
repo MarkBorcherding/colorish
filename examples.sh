@@ -24,15 +24,44 @@ for fg_color in ${colors[*]}; do
   echo
 done
 
-for i in {0..15}; do
-  for j in {0..15}; do
-    let c=$(($i*16 + $j))
-    echo -en "\033[38;5;${c}m"
-    printf "%-4s" $c
-    echo -en "\033[0m"
+function colornum() {
+  echo -en "\033[38;5;${1}m"
+  printf "%-4s" $1
+  echo -en "\033[0m"
+}
+
+echo
+for c in {0..15}; do
+  colornum $c;
+done
+echo
+
+for g in {0..5}; do
+  for r in {0..2}; do
+    for b in {0..5}; do
+      let c=$(($r * 36 + $g * 6 + $b + 16))
+      colornum $c
+    done
+    echo -en " "
   done
   echo
 done
+
+for g in {0..5}; do
+  for r in {3..5}; do
+    for b in {0..5}; do
+      let c=$(($r * 36 + $g * 6 + $b + 16))
+      colornum $c
+    done
+    echo -en " "
+  done
+  echo
+done
+
+for c in {232..255}; do
+  colornum $c
+done
+
 echo
 cat <<- EOF
  Use with:
