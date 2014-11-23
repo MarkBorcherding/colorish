@@ -18,16 +18,18 @@ Be sure to put foreground colors before the background colors.
 
 If you want to add some colors to your shell scripts, snipe the colors you want and use them locally in your scripts.
 
-    #!/bin/sh
+```bash
+#!/bin/sh
 
-    RED="\033[0;31m"
-    RESET_COLOR="\033[0m"
+RED="\033[0;31m"
+RESET_COLOR="\033[0m"
 
-    fail() {
-      echo -e "${RED}==> Error: ${RESET_COLOR} $1
-    }
+fail() {
+  echo -e "${RED}==> Error: ${RESET_COLOR} $1
+}
 
-    do_something || fail "Something didn't work."
+do_something || fail "Something didn't work."
+```
 
 ## Examples
 
