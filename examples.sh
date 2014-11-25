@@ -9,14 +9,12 @@ for style in NORMAL BOLD DIM UNDERLINE BLINK INVERTED HIDDEN; do
    done
    echo
 done
-for style in BRIGHT; do
-  printf "%-10s" "$style"
-  for color in ${colors[*]}; do
-    c="BRIGHT_${color}"
-     echo -en "${!c}$color${RESET_COLOR}\t"
-   done
-   echo
-done
+printf "%-10s" "BRIGHT"
+for color in ${colors[*]}; do
+  c="BRIGHT_${color}"
+   echo -en "${!c}$color${RESET_COLOR}\t"
+ done
+ echo
 echo
 
 for fg_color in ${colors[*]}; do
